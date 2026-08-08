@@ -1,10 +1,20 @@
 export function Hero() {
   return (
     <section className="relative w-full h-[92vh] min-h-[650px] overflow-hidden bg-black">
+      {/* Portrait cut for phones, landscape cut for tablet and up. */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/hero-family.mp4"
-        poster="/images/hero-family-poster.jpg"
+        className="absolute inset-0 w-full h-full object-cover md:hidden"
+        src="/videos/hero-mobile.mp4"
+        poster="/images/hero-mobile-poster.jpg"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      <video
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        src="/videos/hero-desktop.mp4"
+        poster="/images/hero-desktop-poster.jpg"
         autoPlay
         loop
         muted

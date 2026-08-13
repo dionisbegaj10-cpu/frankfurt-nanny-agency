@@ -63,14 +63,17 @@ export default function AboutPage() {
     <div className="flex flex-col flex-1 bg-cream text-ink">
       <SiteHeader />
       <VideoPageHero
-        eyebrow="About us"
         title="Childcare for international families in Frankfurt am Main"
         src="/videos/about-hero.mp4"
         poster="/images/about-hero-poster.jpg"
       />
 
       <section className="max-w-3xl mx-auto px-6 py-20 flex flex-col gap-16">
-        <Prose>
+        <div>
+          <p className="font-label text-xs tracking-[0.25em] uppercase text-rust mb-6 text-center">
+            About us
+          </p>
+          <Prose>
           <p>
             The Frankfurt Nanny Agency is a specialist childcare agency based
             in Frankfurt am Main, Germany. The agency supports international
@@ -85,7 +88,8 @@ export default function AboutPage() {
           <p className="mt-5">
             A free initial consultation is offered to all families.
           </p>
-        </Prose>
+          </Prose>
+        </div>
 
         <div>
           <h2 className="font-heading italic text-2xl md:text-3xl text-rust mb-4">

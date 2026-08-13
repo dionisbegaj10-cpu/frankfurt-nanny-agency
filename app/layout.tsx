@@ -22,7 +22,7 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "The Frankfurt Nanny Agency — High-Profile Family Nanny Services",
+  title: "The Frankfurt Nanny Agency",
   description:
     "The Frankfurt Nanny Agency provides tailored nanny, maternity nurse, and night nanny placements for families in Frankfurt am Main.",
 };

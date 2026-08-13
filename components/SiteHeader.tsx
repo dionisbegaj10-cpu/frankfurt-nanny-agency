@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { HamburgerIcon, CloseIcon } from "./icons";
 import { DecorativeBorderFrame } from "./DecorativeBorder";
@@ -22,34 +22,13 @@ const moreLinks = [
   { label: "Open Positions", href: "/open-positions" },
 ];
 
-export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
+export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    if (!overlay) return;
-    function onScroll() {
-      setScrolled(window.scrollY > 80);
-    }
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [overlay]);
-
-  // Solid by default; only pages with a dark hero (the homepage video) pass
-  // `overlay` so the bar can float transparently over it until you scroll.
-  const solid = !overlay || scrolled;
 
   return (
     <>
       <div className="fixed top-0 inset-x-0 z-50">
-        <header
-          className={`flex items-center justify-between px-7 py-6 transition-colors duration-500 ease-out ${
-            solid
-              ? "bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-ink"
-              : "bg-transparent text-cream"
-          }`}
-        >
+        <header className="flex items-center justify-between px-7 py-6 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-ink">
           <button
             onClick={() => setMenuOpen(true)}
             className="flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase"

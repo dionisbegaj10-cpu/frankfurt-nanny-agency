@@ -73,7 +73,7 @@ function TextLink({ href, children }: { href: string; children: React.ReactNode 
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 bg-cream text-ink">
-      <SiteHeader />
+      <SiteHeader overlay />
       <Hero />
 
       {/* Welcome — short intro, full story lives on /about */}

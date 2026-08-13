@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HamburgerIcon, CloseIcon } from "./icons";
 import { DecorativeBorderFrame } from "./DecorativeBorder";
@@ -22,13 +22,34 @@ const moreLinks = [
   { label: "Open Positions", href: "/open-positions" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (!overlay) return;
+    function onScroll() {
+      setVisible(window.scrollY < 80);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [overlay]);
 
   return (
     <>
-      <div className="fixed top-0 inset-x-0 z-50">
-        <header className="flex items-center justify-between px-7 py-6 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-ink">
+      <div
+        className={`fixed top-0 inset-x-0 z-50 transition-opacity duration-300 ease-out ${
+          overlay && !visible ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        <header
+          className={`flex items-center justify-between px-7 py-6 ${
+            overlay
+              ? "bg-transparent text-cream"
+              : "bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-ink"
+          }`}
+        >
           <button
             onClick={() => setMenuOpen(true)}
             className="flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase"

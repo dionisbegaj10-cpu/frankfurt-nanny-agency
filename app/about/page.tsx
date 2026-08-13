@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { PageHero } from "@/components/PageHero";
+import { VideoPageHero } from "@/components/VideoPageHero";
 
 export const metadata: Metadata = {
   title: "About | The Frankfurt Nanny Agency",
@@ -62,7 +62,12 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col flex-1 bg-cream text-ink">
       <SiteHeader />
-      <PageHero eyebrow="About us" title="Overview" />
+      <VideoPageHero
+        eyebrow="About us"
+        title="Childcare for international families in Frankfurt am Main"
+        src="/videos/about-hero.mp4"
+        poster="/images/about-hero-poster.jpg"
+      />
 
       <section className="max-w-3xl mx-auto px-6 py-20 flex flex-col gap-16">
         <Prose>

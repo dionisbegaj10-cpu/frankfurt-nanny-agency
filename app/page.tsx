@@ -3,7 +3,6 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
-import { VideoBand } from "@/components/VideoBand";
 
 const services = [
   {
@@ -146,8 +145,6 @@ export default function Home() {
           <TextLink href="/services">View all services</TextLink>
         </div>
       </section>
-
-      <VideoBand />
 
       {/* Testimonials */}
       <section className="bg-cream text-ink px-6 md:px-12 py-24 text-center border-y border-ink/10">

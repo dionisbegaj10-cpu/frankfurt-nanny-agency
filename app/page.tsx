@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 
 const services = [
   {
@@ -28,26 +29,6 @@ const services = [
   {
     title: "Playdate club",
     desc: "Play dates for members — coming soon.",
-  },
-];
-
-const testimonials = [
-  { quote: "Made my life in Frankfurt so much easier.", author: "T. B." },
-  {
-    quote: "A calm, reliable presence for our family from day one.",
-    author: "M. R.",
-  },
-  {
-    quote: "Discreet, professional, and truly cared for our children.",
-    author: "S. K.",
-  },
-  {
-    quote: "Alexandra understood exactly what our family needed.",
-    author: "L. H.",
-  },
-  {
-    quote: "The perfect match — we couldn't recommend them more.",
-    author: "J. P.",
   },
 ];
 
@@ -146,29 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-cream text-ink px-6 md:px-12 py-24 text-center border-y border-ink/10">
-        <p className="font-label text-xs tracking-[0.25em] uppercase text-rust mb-6">
-          Testimonials
-        </p>
-        <blockquote className="font-heading italic text-2xl md:text-3xl max-w-2xl mx-auto leading-snug">
-          &ldquo;They went above and beyond to find us a wonderful nanny who
-          our daughter adores.&rdquo;
-        </blockquote>
-        <p className="font-label text-xs tracking-[0.15em] uppercase text-ink/60 mt-4">
-          K. A-H
-        </p>
-        <div className="mt-10 flex items-center justify-center gap-3">
-          {testimonials.map((_, i) => (
-            <span
-              key={i}
-              className={`w-2 h-2 rounded-full ${
-                i === 0 ? "bg-rust" : "bg-ink/20"
-              }`}
-            />
-          ))}
-        </div>
-      </section>
+      <TestimonialsCarousel />
 
       {/* Contact CTA — full form lives on /contact */}
       <section id="contact" className="px-6 md:px-12 py-24 text-center">

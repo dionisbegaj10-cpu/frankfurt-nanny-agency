@@ -80,7 +80,7 @@ export default function Home() {
       <section className="max-w-3xl mx-auto text-center px-6 py-24">
         <SectionLabel>Welcome</SectionLabel>
         <h2 className="font-heading italic text-3xl md:text-4xl mt-4 leading-snug">
-          Welcome to The Frankfurt Nanny Agency
+          The Frankfurt Nanny Agency
         </h2>
 
         <div className="mt-10 mx-auto w-40 h-40 md:w-48 md:h-48 relative rounded-full overflow-hidden border border-rust/30">

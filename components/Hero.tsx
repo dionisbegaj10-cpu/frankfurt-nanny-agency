@@ -22,10 +22,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-black/35" />
 
-      <div className="absolute bottom-[3%] inset-x-0 text-center pointer-events-none px-4">
-        <p className="font-heading italic text-cream/80 text-base md:text-lg mb-1">
-          Welcome to
-        </p>
+      <div className="absolute inset-0 flex items-center justify-center text-center pointer-events-none px-4">
         <h1 className="font-heading text-cream leading-none text-[7vw] md:text-[4.2vw] tracking-tight uppercase">
           The Frankfurt Nanny Agency
         </h1>

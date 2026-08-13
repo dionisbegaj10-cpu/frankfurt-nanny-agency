@@ -59,15 +59,6 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           </button>
 
           <Link
-            href="/"
-            className={`font-heading italic text-2xl md:text-3xl tracking-wide transition-colors duration-500 ${
-              solid ? "text-rust" : "text-cream"
-            }`}
-          >
-            The Frankfurt Nanny Agency
-          </Link>
-
-          <Link
             href="/contact"
             className="font-label text-xs tracking-[0.2em] uppercase"
           >
